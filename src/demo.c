@@ -217,8 +217,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, float hier_thresh, int 
 
             //printf("\033[2J");
             //printf("\033[1;1H");
-            printf("\nFPS:%.1f\n", fps);
-            printf("Frame Number: %d, \t(left_x: %4.0f top_y: %4.0f width: %4.0f height: %4.0f)\n", frame_id, (float)left, (float)top, b.wshow_img->width, b.hshow_img->height);
+            //printf("\nFPS:%.1f\n", fps);
             printf("Objects:\n\n");
 
             ++frame_id;
@@ -230,8 +229,7 @@ void demo(char *cfgfile, char *weightfile, float thresh, float hier_thresh, int 
             draw_detections_cv_v3(show_img, local_dets, local_nboxes, demo_thresh, demo_names, demo_alphabet, demo_classes, demo_ext_output);
             free_detections(local_dets, local_nboxes);
 
-            // printf("\nFPS:%.1f\n", fps);
-            printf("\n\n");
+            printf("\nFPS:%.1f\n", fps);
 
             if(!prefix){
                 if (!dont_show) {
