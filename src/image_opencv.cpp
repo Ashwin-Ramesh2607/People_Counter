@@ -978,12 +978,11 @@ void draw_detections_cv_v3(mat_cv* mat, detection *dets, int num, float thresh, 
                 cv::putText(*show_img, labelstr, pt_text, cv::FONT_HERSHEY_COMPLEX_SMALL, font_size, black_color, 2 * font_size, CV_AA);
                 // cv::FONT_HERSHEY_COMPLEX_SMALL, cv::FONT_HERSHEY_SIMPLEX
             }
-            
         } 
         std::string head_count = "HEAD COUNT: ";
         head_count = head_count + std::to_string(count);
         cv::Scalar green_color = CV_RGB(102, 255, 0);
-        cv::putText(*show_img, head_count, cv::Point(30, 30), cv::FONT_HERSHEY_COMPLEX_SMALL, 2.0, green_color, 1.0 , CV_AA);
+        cv::putText(*show_img, head_count, cv::Point(show_img->rows - 30, 30), cv::FONT_HERSHEY_COMPLEX_SMALL, 2.0, green_color, 2.0 , CV_AA);
         if (ext_output) {
             fflush(stdout);
         }
