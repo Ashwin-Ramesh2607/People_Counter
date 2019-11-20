@@ -859,6 +859,7 @@ void draw_detections_cv_v3(mat_cv* mat, detection *dets, int num, float thresh, 
         if (!show_img) return;
         static int frame_id = 0;
         frame_id++;
+        int count = 0;
 
         for (i = 0; i < num; ++i) {
             char labelstr[4096] = { 0 };
@@ -881,6 +882,7 @@ void draw_detections_cv_v3(mat_cv* mat, detection *dets, int num, float thresh, 
                 }
             }
             if (class_id >= 0) {
+                count++;
                 int width = std::max(1.0f, show_img->rows * .002f);
 
                 //if(0){
@@ -976,7 +978,10 @@ void draw_detections_cv_v3(mat_cv* mat, detection *dets, int num, float thresh, 
                 cv::putText(*show_img, labelstr, pt_text, cv::FONT_HERSHEY_COMPLEX_SMALL, font_size, black_color, 2 * font_size, CV_AA);
                 // cv::FONT_HERSHEY_COMPLEX_SMALL, cv::FONT_HERSHEY_SIMPLEX
             }
-        }
+            std::string head_count = "HEAD COUNT: ";
+            head_count = head_count + std::to_string(count);
+            cv::putText(*show_img, head_count, cv::Point(30, 30), cv::FONT_HERSHEY_DUPLEX, 2.0, CV_RGB(102, 255, 0), 2);
+        } 
         if (ext_output) {
             fflush(stdout);
         }
