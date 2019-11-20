@@ -981,7 +981,7 @@ void draw_detections_cv_v3(mat_cv* mat, detection *dets, int num, float thresh, 
             std::string head_count = "HEAD COUNT: ";
             head_count = head_count + std::to_string(count);
             cv::Scalar green_color = CV_RGB(102, 255, 0);
-            cv::putText(*show_img, head_count, cv::Point(30, 30), cv::FONT_HERSHEY_COMPLEX_SMALL, 2.0, green_color, 2 * 2.0, CV_AA);
+            cv::putText(*show_img, head_count, cv::Point(30, 30), cv::FONT_HERSHEY_COMPLEX_SMALL, 2.0, green_color, 1.0 , CV_AA);
         } 
         if (ext_output) {
             fflush(stdout);
