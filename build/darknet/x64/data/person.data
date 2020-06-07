@@ -1,6 +1,0 @@
-classes= 1
-train  = build/darknet/x64/data/train.txt
-valid  = build/darknet/x64/data/train.txt
-names = build/darknet/x64/data/person.names
-backup = build/darknet/x64/backup/
-
